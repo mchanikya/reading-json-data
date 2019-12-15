@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app='ReadingJsonFileDemoApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Reading JSON file</title>
+    <script type="text/javascript" src='angular.min.js'></script>
+    <script type="text/javascript" src='app.js'></script>
+  </head>
+  <body ng-controller='ReadJsonFileController as RJFC'>
+    <button type="button" name="ReadJson" ng-click='RJFC.readJsonFile()'>Read Json File</button>
+    <br>
+    <!-- <ul>
+      <li ng-repeat='emp in RJFC.empDetails'>{{emp.name}}</li>
+    </ul> -->
+    <table ng-if='RJFC.flag'>
+        <thead>
+            <td>Name</td>
+            <td>City</td>
+            <td>State</td>
+        </thead>
+        <tr ng-repeat='emp in RJFC.empDetails'>
+          <td>{{emp.name}}</td>
+          <td>{{emp.city}}</td>
+          <td>{{emp.state}}</td>
+        </tr>
+    </table>
+  </body>
+</html>
